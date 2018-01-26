@@ -21,12 +21,12 @@ dashboardPage(
                      ),
     sidebarMenu(
       menuItem('Overview', tabName = 'overview', icon = icon("map")),
-      menuItem("Map 1", icon = icon("map"),
-               menuItem("Restaurants by inspection score", tabName = "map", icon = icon("map")),
+      menuItem("Map 1", icon = icon("location-arrow"),
+               menuItem("Restaurants by inspection score", tabName = "map", icon = icon("location-arrow")),
                menuItem(selectizeInput("risk", 
                                           "Select Inspection Score to Display", 
                                           risk, 
-                                          selected = 'No Risk'))), ### add things into menusubitem
+                                          selected = '100-90'))), ### add things into menusubitem
       menuItem("Map 2", icon = icon("envelope-open"),
                menuItem("Restaurants by zipcode",
                         tabName = 'zipcode',

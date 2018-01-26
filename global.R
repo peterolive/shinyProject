@@ -13,7 +13,7 @@ library(shinydashboard)
 
 
 
-map_data_1 = fread('~/R_learning/CopyOfCopyOfCopyOfshinyProject/San_Francisco_Restaurant_Scores.csv')
+map_data_1 = fread('San_Francisco_Restaurant_Scores.csv')
 map_data_1 = data.frame(map_data_1)
 map_data_1 = map_data_1 %>% filter(risk_category != '') %>% 
   mutate(business_phone_number = as.character(business_phone_number)) %>%

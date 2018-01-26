@@ -21,18 +21,18 @@ library(scales)
 shinyServer(function(input, output, session) {
   ########## map 1 ###########
   output$map1 = renderLeaflet({
-    # map_data_1_start = map_data_1 %>% filter(risk_category == 'No Risk')
-    leaflet() %>% 
+    map_data_1_start = map_data_1 %>% filter(score_class == input$risk)
+    leaflet(map_data_1_start) %>% ### watch out for the bug
       addProviderTiles('Esri.WorldStreetMap') %>% 
-      setView(lng = -122.441297, lat = 37.767972, zoom = 13) #%>%
-      # addMarkers(lng = ~longitude, lat = ~latitude,
-      #            clusterOptions = markerClusterOptions(),
-      #            popup = paste("Name:", map_data_1_start$business_name, "<br>",
-      #                          "Address:", map_data_1_start$business_address, "<br>",
-      #                          "Score", map_data_1_start$inspection_score),
-      #            label = map_data_1_start$business_name,
-      #            icon = ~reIcons[risk_cate]
-      #            )
+      setView(lng = -122.441297, lat = 37.767972, zoom = 13) %>% ### watch out for the bug
+      addMarkers(lng = ~longitude, lat = ~latitude,
+                 clusterOptions = markerClusterOptions(),
+                 popup = paste("Name:", map_data_1_start$business_name, "<br>",
+                               "Address:", map_data_1_start$business_address, "<br>",
+                               "Score", map_data_1_start$inspection_score),
+                 label = map_data_1_start$business_name,
+                 icon = ~reIcons[score_class]
+                 )
   })    
   observeEvent({input$risk
   }, {

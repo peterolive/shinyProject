@@ -29,7 +29,8 @@ shinyServer(function(input, output, session) {
                  clusterOptions = markerClusterOptions(),
                  popup = paste("Name:", map_data_1_start$business_name, "<br>",
                                "Address:", map_data_1_start$business_address, "<br>",
-                               "Score", map_data_1_start$inspection_score),
+                               "Score", map_data_1_start$inspection_score, "<br>",
+                               "Phone Number:", map_data_1_start$business_phone_number),
                  label = map_data_1_start$business_name,
                  icon = ~reIcons[score_class]
                  )

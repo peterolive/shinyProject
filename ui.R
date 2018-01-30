@@ -13,7 +13,7 @@ library(shinydashboard)
 dashboardPage(
   
   skin = 'blue',
-  dashboardHeader(title = "My Dashboard"),
+  dashboardHeader(title = "San Francisco Restaurants", titleWidth = 400),
   dashboardSidebar(
     width = 300,
     sidebarUserPanel('Xiaoyu Yang',

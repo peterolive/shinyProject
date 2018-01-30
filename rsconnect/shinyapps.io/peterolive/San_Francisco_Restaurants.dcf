@@ -1,0 +1,12 @@
+name: San_Francisco_Restaurants
+title: San_Francisco_Restaurants
+username:
+account: peterolive
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 266787
+bundleId: 1199901
+url: https://peterolive.shinyapps.io/San_Francisco_Restaurants/
+when: 1517348330.63946
+asMultiple: FALSE
+asStatic: FALSE
